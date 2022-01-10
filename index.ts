@@ -21,7 +21,11 @@ client.on('ready', async () => {
 		typeScript: true,
 		testServers: ['929540223724036117'],
 	});
+})
 
+client.on('messageCreate', (message) => {
+	
+	message.guild?.commands.cache.find(c => c.name === 'create-profie')?.delete();
 })
 
 client.login(process.env.TOKEN)
